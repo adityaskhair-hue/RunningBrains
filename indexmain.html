@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14143A;--indigo:#2B2D9E;--gold:#FFB627;--pink:#FF4F8B;--chalk:#F5F3FF;--bg:#F5F3FF;--tx:#14143A;--card:#FFFFFF;
+:root{--ink:#14143A;--indigo:#2B2D9E;--gold:#FFB627;--pink:#FF4F8B;--chalk:#F5F3FF;--bg:#0E0E2C;--tx:#F1EFFF;--card:#1B1B4A;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E0E2C;--tx:#F1EFFF;--card:#1B1B4A}}
 :root[data-theme="dark"]{--bg:#0E0E2C;--tx:#F1EFFF;--card:#1B1B4A}
@@ -83,14 +83,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ph{padding:6.5rem 0 5rem;color:var(--chalk);margin-top:-2.2rem}
 .ph h1{font-size:clamp(3.2rem,10vw,8rem);max-width:11ch}
 .ph p.lead{max-width:34rem;font-size:1.2rem;margin:1.4rem 0 0}
-.card{background:var(--card);color:var(--tx);border:3px solid var(--ink);border-radius:20px;box-shadow:10px 10px 0 var(--gold);padding:1.8rem}
+.card{background:var(--card);color:var(--tx);border:3px solid rgba(255,255,255,.22);border-radius:20px;box-shadow:10px 10px 0 var(--gold);padding:1.8rem}
 .pull{margin-top:-3.5rem;position:relative;z-index:2}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.2rem}
 .facts div{border-left:5px solid var(--pink);padding-left:.9rem}
 .facts dt{font:600 .9rem Figtree,sans-serif;opacity:.75}
 .facts dd{margin:.15rem 0 0;font:800 1.35rem/1.1 'Bricolage Grotesque',sans-serif}
+.facts.f4{grid-template-columns:repeat(4,1fr)}
+.facts.f3{grid-template-columns:repeat(3,1fr)}
+.facts.f4 dd,.facts.f3 dd{overflow-wrap:anywhere}
+@media (max-width:900px){.facts.f4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.facts.f3{grid-template-columns:1fr}}
 .days{list-style:none;padding:0;margin:2rem 0 0;counter-reset:d;display:grid;gap:1rem}
-.days li{counter-increment:d;position:relative;padding:1.1rem 1.2rem 1.1rem 4.6rem;background:var(--card);border:3px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink)}
+.days li{counter-increment:d;position:relative;padding:1.1rem 1.2rem 1.1rem 4.6rem;background:var(--card);border:3px solid rgba(255,255,255,.22);border-radius:16px;box-shadow:6px 6px 0 var(--indigo)}
 .days li:nth-child(even){margin-left:clamp(0rem,6vw,4rem)}
 .days li::before{content:counter(d);position:absolute;left:1rem;top:50%;transform:translateY(-50%) rotate(-6deg);width:2.5rem;height:2.5rem;display:grid;place-items:center;background:var(--gold);color:var(--ink);border-radius:10px;border:2.5px solid var(--ink);font:800 1.3rem 'Bricolage Grotesque',sans-serif}
 .days li:last-child::before{content:"★"}
@@ -203,15 +208,20 @@ footer{text-align:center;padding:1.5rem 1rem 2.5rem;font-size:.9rem;opacity:.75}
   <div class="ph checker" style="background-color:var(--pink)">
     <div class="wrap">
       <h1>Diwali chess camp</h1>
-      <p class="lead">A hands-on chess camp for kids during the Diwali break. Learn the game, play a lot, and finish with a mini tournament.</p>
+      <p class="lead">A hands-on chess camp for kids during the Diwali break. Learn the game, play a lot, and finish with a mini tournament. Camp runs Monday 9 to Friday 13 November.</p>
     </div>
   </div>
   <div class="wrap pull">
-    <dl class="card facts" style="margin:0">
-      <div><dt>Dates</dt><dd>During the Diwali break (exact dates soon)</dd></div>
-      <div><dt>Venue</dt><dd>To be announced</dd></div>
-      <div><dt>Fee</dt><dd>To be announced</dd></div>
+    <dl class="card facts f4" style="margin:0">
+      <div><dt>Dates</dt><dd>Mon 9 to Fri 13 November</dd></div>
+      <div><dt>Fee</dt><dd>₹899 for the full week</dd></div>
+      <div><dt>Tournament</dt><dd>Sat 14 November</dd></div>
       <div><dt>Coach</dt><dd>Aditya, chess coach and arbiter</dd></div>
+    </dl>
+    <dl class="card facts f3" style="margin:2rem 0 0">
+      <div><dt>Venue</dt><dd>Bahubali Building, opposite Mumbra Police Station</dd></div>
+      <div><dt>Venue comfort</dt><dd>Fully air conditioned</dd></div>
+      <div><dt>Playing material</dt><dd>Provided by the organiser</dd></div>
     </dl>
   </div>
   <div class="sec wrap" style="padding-top:4rem">
@@ -222,7 +232,7 @@ footer{text-align:center;padding:1.5rem 1rem 2.5rem;font-size:.9rem;opacity:.75}
       <li><b>Special moves and opening basics.</b> Castling, en passant, promotion.</li>
       <li><b>Checkmate patterns and tactics.</b> Back rank and ladder mates.</li>
       <li><b>Practice games and puzzles.</b> Playing with a friend, then solving together.</li>
-      <li><b>Mini tournament.</b> Real games with real rules, plus certificates.</li>
+      <li><b>Mini tournament on Saturday 14 November.</b> Real games with real rules, plus certificates. Organised by the camp organiser, with playing material provided.</li>
     </ol>
   </div>
   <div class="contact checker">
